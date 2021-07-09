@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { SkynetClient, genKeyPairFromSeed } from 'skynet-js';
 
 // Setup Skynet Client
-const portal = true ? 'https://siasky.net' : undefined;
+const portal =
+  window.location.hostname === 'localhost' ? 'https://siasky.xyz' : undefined;
 const client = new SkynetClient(portal);
 
 // Setup Keys for Read/Write of Mutable Data
