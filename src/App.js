@@ -1,22 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+
+const corsProxy = 'http://localhost:8080/';
+const wisdomApiUrl = 'dog-api.kinduff.com/api/facts';
 
 const App = () => {
+  const [dogWisdom, setDogWisdom] = useState('Loading dog wisdom...');
+  const [loading, setLoading] = useState(true);
+
+  const getWisdom = () => {
+    if (!loading) {
+      setDogWisdom('...');
+      setLoading(true);
+      fetch(corsProxy + wisdomApiUrl)
+        .then((response) => response.json())
+        .then((data) => setDogWisdom(data.facts[0]))
+        .then(() => setLoading(false));
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>{dogWisdom}</p>
+        <button onClick={getWisdom} disabled={loading}>
+          Renew Wisdom
+        </button>
       </header>
     </div>
   );
