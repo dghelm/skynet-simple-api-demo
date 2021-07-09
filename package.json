@@ -2,6 +2,7 @@
   "name": "akash",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -9,6 +10,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "skynet-js": "^4.0.11-beta",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
