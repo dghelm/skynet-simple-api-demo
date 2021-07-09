@@ -1,6 +1,22 @@
-# Getting Started with Create React App
+# Deploy & Publish on Skynet with React
+
+This project was made for a live demo showcasing how easily you can publish a React App to Skynet.
+
+It also shows the idea of publishing API data to Skynet at a single consumable URL (or "Skylink").
+
+This project is built using [Skynet](https://siasky.net).
+
+- Step 1 is a the default Create React App after adding `"homepage":".",` to `package.json`
+- Step 2 shows consuming an external API (uses [CORS Anywhere](https://github.com/Rob--W/cors-anywhere) running on localhost)
+- Step 3 takes that data and writes it to SkyDB, printing a link to the console that can be used outside of `skynet-js`.
+
+To deploy, run `yarn build` and drag and drop the `build` folder to the uploader on [Siasky.net](https://siasky.net) after selecting "Do you want to upload a web app or directory?"
+
+For more info on developing with Skynet, see the Skynet Guide's [Developing on Skynet](https://support.siasky.net/the-technology/developing-on-skynet) or the [Skynet Workshop](https://github.com/SkynetLabs/skynet-workshop).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+---
 
 ## Available Scripts
 
